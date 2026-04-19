@@ -8,6 +8,7 @@ class TStack {
  private:
     T arr[Size];
     int top;
+
  public:
     TStack() :top(-1) {}
     bool isEmpty() const {
