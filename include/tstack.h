@@ -19,6 +19,8 @@ class TStack {
     T get() const {
         if (!isEmpty())
             return arr[top];
+        else
+            return 0;
     }
     void Pop() {
         if (!isEmpty())
