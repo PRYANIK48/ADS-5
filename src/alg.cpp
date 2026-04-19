@@ -4,8 +4,8 @@
 #include "tstack.h"
 
 std::map<char, std::string> symbols {
-    {'0', "num"},{'1', "num"}, {'2', "num"},{'3', "num"}, {'4', "num"},
-    {'5', "num"},{'6', "num"}, {'7', "num"},{'8', "num"}, {'9', "num"},
+    {'0', "num"}, {'1', "num"}, {'2', "num"},{'3', "num"}, {'4', "num"},
+    {'5', "num"}, {'6', "num"}, {'7', "num"},{'8', "num"}, {'9', "num"},
     {'(', "operation"}, {')', "operation"}, {'+', "operation"},
     {'-', "operation"}, {'*', "operation"}, {'/', "operation"}
 };
@@ -24,12 +24,12 @@ std::string infx2pstfx(const std::string& inf) {
                 out.push_back(' ');
             isPreviousNumber = true;
             out.push_back(inf[index]);
-        }else {
+        } else {
             isPreviousNumber = false;
             if (stack.isEmpty() || inf[index] == '(' ||
                 (priorities[inf[index]] > stack.get())) {
                 stack.Push(inf[index]);
-            }else {
+            } else {
                 while (!stack.isEmpty() &&
                     priorities[inf[index]] <= priorities[stack.get()]) {
                     out.push_back(' ');
