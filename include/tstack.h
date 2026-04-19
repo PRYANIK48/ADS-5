@@ -3,36 +3,30 @@
 #define INCLUDE_TSTACK_H_
 #include <string>
 
-template<typename T, int size>
+template<typename T, int Size>
 class TStack {
-    private:
-    T arr[size];
+private:
+    T arr[Size];
     int top;
-    public:
+public:
     TStack() :top(-1) {}
     bool isEmpty() const {
         return top == -1;
     }
     bool isFull() const {
-        return top == size - 1;
+        return top == Size - 1;
     }
     T get() const {
         if (!isEmpty())
             return arr[top];
-        else
-            throw std::string("empty");
     }
     void Pop() {
         if (!isEmpty())
             top--;
-        else
-            throw std::string("empty");
     }
     void Push(T item) {
         if (!isFull())
             arr[++top] = item;
-        else
-            throw std::string("full");
     }
 };
 
