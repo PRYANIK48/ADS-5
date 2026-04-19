@@ -78,7 +78,6 @@ int eval(const std::string& pref) {
             switch (pref[index]) {
             case '+':
                 stack.Push(number2 + number1);
-                std::cout << stack.get() << std::endl;
                 break;
             case '-':
                 stack.Push(number2 - number1);
