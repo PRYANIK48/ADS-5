@@ -24,7 +24,7 @@ std::string infx2pstfx(const std::string& inf) {
                 out.push_back(' ');
             isPreviousNumber = true;
             out.push_back(inf[index]);
-        } else if (symbols[pref[index]] == "operation") {
+        } else if (symbols[inf[index]] == "operation") {
             isPreviousNumber = false;
             if (stack.isEmpty() || inf[index] == '(' ||
                 (priorities[inf[index]] > stack.get())) {
